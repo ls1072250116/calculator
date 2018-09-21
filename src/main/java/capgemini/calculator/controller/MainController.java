@@ -21,14 +21,15 @@ public class MainController {
         System.out.println("operator:"+request.getParameter("operator"));
         System.out.println("string2:"+Float.parseFloat(request.getParameter("string2")));
         System.out.println();
-
+        //获取前端参数，两个str，一个operator
         Map<String,String> map = new HashMap<>();
         Float f1=Float.parseFloat(request.getParameter("string1"));
         String operator=request.getParameter("operator");
         Float f2=Float.parseFloat(request.getParameter("string2"));
-
+        //处理参数，返回结果
         CalculateService cs=new CalculateService();
         String result=cs.Calculate(f1,operator,f2);
+        //返回结果
         map.put("msg",result);
         return map;
     }
